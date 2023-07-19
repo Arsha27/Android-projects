@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="409dp"
@@ -13,12 +13,19 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <Button
-            android:id="@+id/bhide"
+        <EditText
+            android:id="@+id/et1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hide"
-            android:onClick="onHide"/>
-    </LinearLayout>
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
+        <Button
+            android:id="@+id/bnext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:onClick="onNext"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
