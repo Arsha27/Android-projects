@@ -10,8 +10,17 @@
         android:id="@+id/button"
         android:layout_width="414dp"
         android:layout_height="94dp"
-        android:text="click"
         android:onClick="bclick"
-        tools:layout_editor_absoluteX="23dp"
+        android:text="click"
+        tools:layout_editor_absoluteX="-2dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="191dp"
+        android:layout_height="85dp"
+        android:text="Click2"
+        android:onClick="onClick2"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="171dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,45 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder obj=new AlertDialog.Builder(this);
         obj.setMessage("Are You Sure?");
         obj.setCancelable(true);
-        obj.setPositiveButton(1, this);
-        obj.setNegativeButton( 0,  this);
+        obj.setPositiveButton(android.R.string.ok, this);
+        obj.setNegativeButton( android.R.string.cancel,  this);
         AlertDialog d=obj.create();
         d.show();
+    }
+
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+        if(i == -1)
+        {
+            finish();
+        }
+        else
+        {
+            dialogInterface.cancel();
+        }
+
+    }
+    public void onClick2(View v)
+    {
+        AlertDialog.Builder obj=new AlertDialog.Builder(this);
+        obj.setMessage("Are you sure?").setCancelable(true)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog d = obj.create();
+        d.show();
+
+
+
+
     }
 }
